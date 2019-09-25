@@ -1,0 +1,32 @@
+{
+  "name": "myrec-plat",
+  "version": "1.0.0",
+  "description": "A manage platform for myRec.",
+  "main": "index.js",
+  "dependencies": {
+    "webpack-cli": "^3.3.9",
+    "webpack": "^4.41.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BlueStoneQ/myRec-plat.git"
+  },
+  "keywords": [
+    "React",
+    "webpack",
+    "babel",
+    "eslint",
+    "es6",
+    "plat"
+  ],
+  "author": "sTone",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/BlueStoneQ/myRec-plat/issues"
+  },
+  "homepage": "https://github.com/BlueStoneQ/myRec-plat#readme"
+}

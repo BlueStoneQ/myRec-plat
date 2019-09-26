@@ -8,6 +8,7 @@
     "cross-env": "^6.0.0",
     "html-webpack-plugin": "^4.0.0-beta.8",
     "webpack": "^4.41.0",
+    "webpack-clean-plugin": "^0.2.3",
     "webpack-cli": "^3.3.9"
   },
   "scripts": {

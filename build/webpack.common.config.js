@@ -12,7 +12,7 @@ const SRC_PATH = config.SRC_PATH;
 const BUILD_PATH = config.BUILD_PATH;
 
 module.exports = {
-  // mode: 'development',
+  mode: 'development',
   context: path.resolve(__dirname, ROOT_PATH),
   entry: {
     main: path.resolve(SRC_PATH, 'index.js'),
@@ -22,7 +22,16 @@ module.exports = {
     path: BUILD_PATH,
     filename: '[name].[hash:8].bundle.js'
   },
-  module: {},
+  module: {
+    rules: [
+      {
+        test: /\.css/,
+        include: path.resolve(SRC_PATH),
+        exclude: path.resolve(ROOT_PATH, 'node_modules'),
+        use: ['style-loader', 'css-loader']
+      }
+    ]
+  },
   plugins: [
     // https://github.com/jantimon/html-webpack-plugin#configuration
     new HtmlWebpackPlugin(),

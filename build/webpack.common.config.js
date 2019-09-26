@@ -2,6 +2,7 @@
  * webpack中dev和prod两种模式公用的配置
  */
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 const config = require('./config');
 
 // 基础路径
@@ -10,6 +11,7 @@ const SRC_PATH = config.SRC_PATH;
 const BUILD_PATH = config.BUILD_PATH;
 
 module.exports = {
+  // mode: 'development',
   context: path.resolve(__dirname, ROOT_PATH),
   entry: {
     main: path.resolve(SRC_PATH, 'index.js')
@@ -19,5 +21,8 @@ module.exports = {
     filename: '[name].[hash:8].bundle.js'
   },
   module: {},
-  plugins: []
+  plugins: [
+    // https://github.com/jantimon/html-webpack-plugin#configuration
+    new HtmlWebpackPlugin()
+  ]
 }

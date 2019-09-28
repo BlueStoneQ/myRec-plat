@@ -16,7 +16,7 @@ module.exports = {
   context: path.resolve(__dirname, ROOT_PATH),
   entry: {
     main: path.resolve(SRC_PATH, 'index.js'),
-    app2: path.resolve(SRC_PATH, 'index.js')
+    app2: path.resolve(SRC_PATH, 'a.js')
   },
   output: {
     path: BUILD_PATH,
@@ -41,6 +41,14 @@ module.exports = {
     // https://github.com/jantimon/html-webpack-plugin#configuration
     new HtmlWebpackPlugin({
       filename: 'index.html', // 输出html的名称
+      template: path.resolve(ROOT_PATH, 'public', 'index.ejs'),
+      templateParameters: {
+        title: 'myRec'
+      }
+    }),
+    new HtmlWebpackPlugin({
+      chunks: ['app2'],
+      filename: 'index2.html', // 输出html的名称
       template: path.resolve(ROOT_PATH, 'public', 'index.ejs'),
       templateParameters: {
         title: 'myRec'

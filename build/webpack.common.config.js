@@ -34,7 +34,13 @@ module.exports = {
   },
   plugins: [
     // https://github.com/jantimon/html-webpack-plugin#configuration
-    new HtmlWebpackPlugin(),
+    new HtmlWebpackPlugin({
+      filename: 'index.html', // 输出html的名称
+      template: path.resolve(ROOT_PATH, 'public', 'index.ejs'),
+      templateParameters: {
+        title: 'myRec'
+      }
+    }),
     // https://www.npmjs.com/package/clean-webpack-plugin
     new CleanWebpackPlugin()
   ]

@@ -25,7 +25,12 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.css/,
+        test: /\.js$/,
+        include: path.resolve(SRC_PATH),
+        exclude: path.resolve(ROOT_PATH, 'node_modules'),
+        use: ['babel-loader']
+      }, {
+        test: /\.css$/,
         include: path.resolve(SRC_PATH),
         exclude: path.resolve(ROOT_PATH, 'node_modules'),
         use: ['style-loader', 'css-loader']

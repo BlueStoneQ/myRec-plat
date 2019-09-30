@@ -8,6 +8,7 @@ const test = () => {
   const rootDom = document.getElementById('root');
   imgDom.src = ipg;
   rootDom.appendChild(imgDom);
+  rootDom.innerHtml = '123';
   console.log('12345678 start: ');
 }
 

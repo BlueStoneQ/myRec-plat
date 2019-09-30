@@ -12,10 +12,9 @@ const SRC_PATH = config.SRC_PATH;
 const BUILD_PATH = config.BUILD_PATH;
 
 module.exports = {
-  // mode: 'development',
   context: path.resolve(__dirname, ROOT_PATH),
   entry: {
-    main: path.resolve(SRC_PATH, 'index.js')
+    main: [path.resolve(SRC_PATH, 'index.js')]
   },
   output: {
     path: BUILD_PATH,

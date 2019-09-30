@@ -40,7 +40,7 @@ module.exports = {
         test: /\.js$/,
         include: path.resolve(SRC_PATH),
         exclude: path.resolve(ROOT_PATH, 'node_modules'),
-        use: ['babel-loader']
+        use: ['babel-loader', 'eslint-loader']
       }, {
         test: /\.css$/,
         include: path.resolve(SRC_PATH),

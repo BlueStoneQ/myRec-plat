@@ -18,7 +18,7 @@ module.exports = {
   },
   output: {
     path: BUILD_PATH,
-    filename: '[name].[hash:8].bundle.js'
+    filename: '[name].[chunkhash:8].bundle.js'
   },
   resolve: {
     alias: {

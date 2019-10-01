@@ -59,6 +59,11 @@ module.exports = {
             }
           }
         ]
+      }, {
+        test: /\.(woff|woff2|eot|ttf|otf)$/,
+        include: path.resolve(ROOT_PATH, 'public', 'assets', 'fonts'),
+        exclude: path.resolve(ROOT_PATH, 'node_modules'),
+        use: ['file-loader']
       }
     ]
   },

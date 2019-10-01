@@ -46,8 +46,8 @@
     "webpack-merge": "^4.2.2"
   },
   "scripts": {
-    "start": "npx cross-env NODE_ENV=development node ./build/devServer.js",
-    "build": "npx cross-env NODE_ENV=production webpack --config ./build/webpack.prod.config.js",
+    "start": "cross-env NODE_ENV=development node ./build/devServer.js",
+    "build": "cross-env NODE_ENV=production webpack --config ./build/webpack.prod.config.js",
     "test": "test"
   },
   "repository": {

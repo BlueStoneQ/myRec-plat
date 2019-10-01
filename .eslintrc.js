@@ -4,8 +4,10 @@ module.exports = {
         "es6": true,
         "node": true
     },
+    "parser": "babel-eslint",
     "extends": [
         "standard",
+        "standard-react",
         "eslint:recommended"
     ],
     "globals": {

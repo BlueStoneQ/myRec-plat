@@ -37,7 +37,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.(js|jsx)$/,
         include: path.resolve(SRC_PATH),
         exclude: path.resolve(ROOT_PATH, 'node_modules'),
         use: ['babel-loader', 'eslint-loader']

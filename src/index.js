@@ -1,15 +1,8 @@
 /**
- * 根文件
+ * 根文件index
  */
-import ipg from '$public/assets/images/heart.jpg'
+import React from 'react'
+import ReactDom from 'react-dom'
+import App from './views/App'
 
-const test = () => {
-  const imgDom = document.createElement('img')
-  const rootDom = document.getElementById('root')
-  imgDom.src = ipg
-  rootDom.appendChild(imgDom)
-  rootDom.innerHtml = '123'
-  console.log('12345678 start: ')
-}
-
-test()
+ReactDom.render(<App />, document.getElementById('root'))

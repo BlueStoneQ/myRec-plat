@@ -42,10 +42,10 @@ module.exports = {
         exclude: path.resolve(ROOT_PATH, 'node_modules'),
         use: ['babel-loader', 'eslint-loader']
       }, {
-        test: /\.css$/,
+        test: /\.(css|scss)$/,
         include: path.resolve(SRC_PATH),
         exclude: path.resolve(ROOT_PATH, 'node_modules'),
-        use: ['style-loader', 'css-loader']
+        use: ['style-loader', 'css-loader', 'sass-loader']
       }, {
         test: /\.(jpe?g|png|gif|svg)$/,
         include: path.resolve(ROOT_PATH, 'public', 'assets', 'images'),

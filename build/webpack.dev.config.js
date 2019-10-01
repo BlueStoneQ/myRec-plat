@@ -8,6 +8,8 @@ const common = require('./webpack.common.config.js');
 module.exports = merge(common, {
   mode: 'development',
   plugins: [
+    // https://www.webpackjs.com/guides/hot-module-replacement/#启用-hmr
+    new webpack.NamedModulesPlugin(),
     new webpack.optimize.OccurrenceOrderPlugin(),
     // HMR https://webpack.docschina.org/plugins/hot-module-replacement-plugin/
     new webpack.HotModuleReplacementPlugin(),

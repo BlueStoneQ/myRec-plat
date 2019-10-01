@@ -2,6 +2,7 @@
  * App
  */
 import React, { Component } from 'react'
+import { hot } from 'react-hot-loader/root'
 import './App.scss'
 import imgBk from '$public/assets/images/heart.jpg'
 
@@ -14,10 +15,10 @@ class App extends Component {
           background: `url(${imgBk})`
         }}
       >
-        123
+        123456
       </div>
     )
   }
 }
 
-export default App
+export default hot(App)

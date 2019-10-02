@@ -5,6 +5,7 @@ const path = require('path');
 const merge = require('webpack-merge');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const common = require('./webpack.common.config.js');
 const config = require('./config');
 
@@ -50,6 +51,8 @@ module.exports = merge(common, {
       // ignoreOrder: false, // Enable to remove warnings about conflicting order
     }),
     // https://www.npmjs.com/package/clean-webpack-plugin
-    new CleanWebpackPlugin()
+    new CleanWebpackPlugin(),
+    // https://www.npmjs.com/package/webpack-bundle-analyzer
+    new BundleAnalyzerPlugin()
   ],
 });

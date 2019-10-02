@@ -3,7 +3,6 @@
  */
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const config = require('./config');
 
 // 基础路径
@@ -18,7 +17,7 @@ module.exports = {
   },
   output: {
     path: BUILD_PATH,
-    filename: '[name].[chunkhash:8].bundle.js'
+    filename: process.env.NODE_ENV === 'development' ? '[name].[hash:8].bundle.js' : '[name].[chunkhash:8].bundle.js'
   },
   resolve: {
     alias: {
@@ -41,11 +40,6 @@ module.exports = {
         include: path.resolve(SRC_PATH),
         exclude: path.resolve(ROOT_PATH, 'node_modules'),
         use: ['babel-loader', 'eslint-loader']
-      }, {
-        test: /\.(css|scss)$/,
-        include: path.resolve(SRC_PATH),
-        exclude: path.resolve(ROOT_PATH, 'node_modules'),
-        use: ['style-loader', 'css-loader', 'sass-loader']
       }, {
         test: /\.(jpe?g|png|gif|svg)$/,
         include: path.resolve(ROOT_PATH, 'public', 'assets', 'images'),
@@ -75,8 +69,6 @@ module.exports = {
       templateParameters: {
         title: 'myRec'
       }
-    }),
-    // https://www.npmjs.com/package/clean-webpack-plugin
-    new CleanWebpackPlugin()
+    })
   ]
 };

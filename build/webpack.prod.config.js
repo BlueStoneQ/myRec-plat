@@ -31,7 +31,12 @@ module.exports = merge(common, {
               // if hmr does not work, this is a forceful method.
               reloadAll: true
             },
-          }, 'css-loader', 'sass-loader'
+          }, {
+            loader: 'css-loader',
+            options: {
+              modules: true // 开启css-module
+            }
+          }, 'sass-loader'
         ]
       },
     ]

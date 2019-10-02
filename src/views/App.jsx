@@ -3,14 +3,14 @@
  */
 import React, { Component } from 'react'
 import { hot } from 'react-hot-loader/root'
-import './App.scss'
+import style from './App.scss'
 import imgBk from '$public/assets/images/heart.jpg'
 
 class App extends Component {
   render () {
     return (
       <div
-        className='app-wrap'
+        className={style['app-wrap']}
         style={{
           background: `url(${imgBk})`
         }}

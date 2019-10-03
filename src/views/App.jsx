@@ -3,20 +3,29 @@
  */
 import React, { Component } from 'react'
 import { hot } from 'react-hot-loader/root'
-import style from './App.scss'
-import imgBk from '$public/assets/images/heart.jpg'
+import { HashRouter as Router, Route, Switch, Link } from 'react-router-dom'
+
+const Home = () => (
+  <h2>Home</h2>
+)
+
+const Header = () => (
+  <ul>
+    <li>
+      <Link to='/'>Home</Link>
+    </li>
+  </ul>
+)
 
 class App extends Component {
   render () {
     return (
-      <div
-        className={style['app-wrap']}
-        style={{
-          background: `url(${imgBk})`
-        }}
-      >
-        123456
-      </div>
+      <Router>
+        <Header />
+        <Switch>
+          <Route path='/' component={Home} />
+        </Switch>
+      </Router>
     )
   }
 }

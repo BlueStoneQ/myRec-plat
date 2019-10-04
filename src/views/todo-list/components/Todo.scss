@@ -3,6 +3,10 @@
   height: 30px;
   text-align: left;
   cursor: pointer;
+  -webkit-user-select:none;
+  -moz-user-select:none;
+  -ms-user-select:none;
+  user-select:none;
   &:nth-child(odd) {
     background: rgba(250, 250, 0, 0.4)
   }

@@ -1,4 +1,5 @@
-import { ADD_TODO } from '../../constants'
+import { ADD_TODO, TOGGLE_TODO } from '../../constants'
+
 const defaultState = []
 
 const todoList = (state = defaultState, action) => {
@@ -9,9 +10,16 @@ const todoList = (state = defaultState, action) => {
         {
           // 新增的todo
           id: action.id,
-          text: action.text
+          text: action.text,
+          completed: false
         }
       ]
+    case TOGGLE_TODO:
+      return state.map(todo => (
+        (todo.id === action.id)
+          ? { ...todo, completed: !todo.completed }
+          : todo
+      ))
     default:
       return state
   }

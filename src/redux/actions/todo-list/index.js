@@ -1,4 +1,4 @@
-import { ADD_TODO, TOGGLE_TODO } from '../../constants'
+import { ADD_TODO, TOGGLE_TODO, SET_VISIBILITY_FILTER } from '../../constants'
 
 let nextTodoId = 0
 
@@ -14,5 +14,12 @@ export const toggleTodo = id => {
   return {
     type: TOGGLE_TODO,
     id
+  }
+}
+
+export const setVisibilityFilter = filter => {
+  return {
+    type: SET_VISIBILITY_FILTER,
+    filter
   }
 }

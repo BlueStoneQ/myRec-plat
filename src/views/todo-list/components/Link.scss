@@ -1,0 +1,7 @@
+.filter {
+  cursor: pointer;
+  user-select: none;
+  &:hover {
+    color: rgba($color: #0ff, $alpha: 1.0)
+  }
+}

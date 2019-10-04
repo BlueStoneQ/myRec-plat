@@ -1,10 +1,25 @@
 import { connect } from 'react-redux'
 import List from '../components/List'
 import { toggleTodo } from '../../../redux/actions/todo-list'
+import { SHOW_COMPELETED, SHOW_ACTIVE } from '../constants'
 
-const mapStateToProps = state => {
+/**
+ * 让两个state值共同参与计算
+ */
+const getFilterTodoList = (list, filter) => {
+  switch (filter) {
+    case SHOW_ACTIVE:
+      return list.filter(todo => !todo.completed)
+    case SHOW_COMPELETED:
+      return list.filter(todo => todo.completed)
+    default:
+      return list
+  }
+}
+
+const mapStateToProps = ({ todoList, visibilityFilter }) => {
   return {
-    todoList: state.todoList
+    todoList: getFilterTodoList(todoList, visibilityFilter)
   }
 }
 

@@ -5,10 +5,10 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Todo from './Todo'
 
-const List = ({ todos }) => (
+const List = ({ todoList }) => (
   <ul>
     {
-      todos.map((v, i) => (
+      todoList.map((v, i) => (
         <Todo key={i} {...v} />
       ))
     }
@@ -16,7 +16,7 @@ const List = ({ todos }) => (
 )
 
 List.propTypes = {
-  todos: PropTypes.array.isRequired
+  todoList: PropTypes.array.isRequired
 }
 
 export default List

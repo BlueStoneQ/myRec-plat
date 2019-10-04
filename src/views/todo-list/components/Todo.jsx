@@ -1,8 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import styles from './Todo.scss'
 
 const Todo = ({ text }) => (
-  <li>{text}</li>
+  <li className={styles.todo}>{text}</li>
 )
 
 Todo.propTypes = {

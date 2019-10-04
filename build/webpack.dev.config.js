@@ -19,7 +19,14 @@ module.exports = merge(common, {
         test: /\.(sa|sc|c)ss$/,
         include: path.resolve(SRC_PATH),
         exclude: path.resolve(ROOT_PATH, 'node_modules'),
-        use: ['style-loader', 'css-loader', 'sass-loader']
+        use: [
+          'style-loader',
+          {
+          loader: 'css-loader',
+          options: {
+            modules: true // 开启css-module
+          }
+        }, 'sass-loader']
       }, 
     ]
   },

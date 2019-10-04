@@ -9,7 +9,7 @@ const List = ({ todoList }) => (
   <ul>
     {
       todoList.map((v, i) => (
-        <Todo key={i} {...v} />
+        <Todo key={v.id} {...v} />
       ))
     }
   </ul>

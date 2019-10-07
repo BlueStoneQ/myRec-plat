@@ -1,4 +1,4 @@
-import { SET_VISIBILITY_FILTER } from '../../constants'
+import { SET_VISIBILITY_FILTER } from '../../constants/todo-list'
 
 /**
  * 该state在整个state中是这样的

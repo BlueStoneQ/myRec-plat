@@ -1,4 +1,4 @@
-import { ADD_TODO, TOGGLE_TODO, SET_VISIBILITY_FILTER } from '../../constants'
+import { ADD_TODO, TOGGLE_TODO, SET_VISIBILITY_FILTER } from '../../constants/todo-list'
 
 let nextTodoId = 0
 

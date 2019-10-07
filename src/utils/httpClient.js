@@ -25,14 +25,14 @@ if (module.hot) {
  * axios基本配置
  */
 Object.assign(axios.defaults, {
-  baseURL: Config.API_BASE_URL, // url基础地址
-  headers: {
-    'X-Requested-With': 'XMLHttpRequest' // ajax请求
-  },
-  withCredentials: false, // 跨域请求时是否需要凭证
-  showLoading: true, // 是否显示遮罩
-  showError: true, // 返回错误时是否显示错误信息
-  timeout: 15000 // 超时设置
+  // baseURL: Config.API_BASE_URL, // url基础地址
+  // headers: {
+  //   'X-Requested-With': 'XMLHttpRequest' // ajax请求
+  // },
+  // withCredentials: false, // 跨域请求时是否需要凭证
+  // showLoading: true, // 是否显示遮罩
+  // showError: true, // 返回错误时是否显示错误信息
+  // timeout: 15000 // 超时设置
 })
 
 /**

@@ -8,6 +8,7 @@ const webpack = require('webpack');
 const express = require('express');
 const WebpackDevMiddleWare = require('webpack-dev-middleware');
 const WebpackHotMiddleware = require("webpack-hot-middleware");
+const proxy = require('http-proxy-middleware')
 const config = require('./config.js');
 const open = require('open');
 const chalk = require('chalk');
@@ -45,6 +46,15 @@ const app = express();
 app.use(devMiddle);
 
 app.use(hotMiddle);
+
+// 代理模式开启：启动代理
+config.PROXY_ABLE &&
+app.use('/data',
+  proxy({
+    target: 'http://www.weather.com.cn',
+    changeOrigin: true
+  })
+)
 
 // 设置访问静态文件的路径   http://www.expressjs.com.cn/starter/static-files.html
 app.use('/static', express.static(PUBLIC_DIR));

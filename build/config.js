@@ -13,5 +13,6 @@ module.exports = {
   SRC_PATH: path.resolve(ROOT_PATH, 'src'),
   BUILD_PATH: path.resolve(ROOT_PATH, 'dist'), // 打包后结果路径
   PUBLIC_DIR: path.resolve(ROOT_PATH, 'public'), // 静态资源实际路径
+  PROXY_ABLE: true // 是否开启代理
   // PUBLIC_PATH: IS_DEV ? ROOT_PATH : ROOT_PATH // 目前dev和prod环境下。publlicpath都设置为根目录 
 };

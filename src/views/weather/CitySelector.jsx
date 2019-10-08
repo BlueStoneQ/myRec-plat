@@ -18,6 +18,12 @@ class CitySelectoer extends Component {
     this.props.onSelectCity(cityCode)
   }
 
+  componentDidMount () {
+    // 初始化请求
+    const defaultCity = Object.keys(CITY_CODES)[0]
+    this.props.onSelectCity(CITY_CODES[defaultCity])
+  }
+
   render () {
     return (
       <select onChange={(e) => this.onChange(e)}>
